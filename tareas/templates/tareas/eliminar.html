@@ -1,0 +1,59 @@
+<link rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+
+    body{
+        background-color: #638CB8;
+    }
+
+    p{
+        font-size: 24;
+        font-weight: 600;
+    }
+
+    input{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+
+    .submit{
+        background-color: #6BA3E8;
+    }
+
+    .center-column{
+        width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 6px 2px 30px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    .btn-danger{
+        font-size: medium;
+        width: 100%;
+        padding: 12px 20px;
+        padding-top: 6px;
+        margin: 8px 0;
+        background-color: #ffae19;
+        border-color: #e59400;
+    }
+
+
+</style>
+
+<div class="center-column">
+
+    <p>Seguro quieres eliminar "{{item}}"?</p>
+
+    <a class="btn btn-sm btn-danger" href="{% url 'lista' %}">Cancelar</a>
+
+    <form method="POST", action="">
+        {% csrf_token %}
+        <input class="btn btn-info" type="submit" value="Confirmar" name="Confirmar">
+    </form>
+
+</div>
